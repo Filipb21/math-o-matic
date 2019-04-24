@@ -1,0 +1,205 @@
+html, body, #app {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: grey;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+/*** Background Colors ***/
+.grey {
+    background-color: grey;
+}
+
+.green {
+    background-color: #25b125;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.red {
+    background-color: #e82c2c;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.purple {
+    background-color: purple;
+}
+
+.lightBlue {
+    background-color: lightblue;
+}
+/******************/
+
+#introView {
+    height: 100%;
+    text-align: center;
+}
+
+#introTitle {
+    position: absolute;
+    top: 100px;
+    font-size: 50px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    color: #fff;
+}
+
+#playGameBtn {
+    display: inline-block;
+    position: absolute;
+    top: 250px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    font-size: 5em;
+    cursor: pointer;
+}
+
+#gameView {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#currentScoreCorner, #equationContainer, #gameOverView {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+#currentScoreCorner {
+    top: 20px;
+    right: 40px;
+    position: absolute;
+    font-size: 60px;
+}
+
+#equationContainer {
+    position: absolute;
+    top: 90px;
+    font-size: 85px;
+}
+
+#answer {
+    text-align: center;
+}
+
+#responseContainer {
+    position: absolute;
+    bottom: 0;
+    font-size: 120px;
+}
+
+#responseContainer > div > i {
+    cursor: pointer;
+}
+
+#yesResponse, #noResponse {
+    display: inline-block;
+}
+
+#gameOverView {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+#resetGameBtn {
+    text-align: center;
+    font-size: 60px;
+    cursor: pointer;
+}
+
+#timerBar {
+    height: 4px;
+    width: 100%;
+}
+
+#timerBar > div {
+    height: 100%;
+    width: 0;
+    background-color: white;
+}
+
+#gameOverEquation {
+    font-size: 85px;
+}
+
+#gameOverExpression {
+    text-align: center;
+}
+
+#gameOverAnswer > div, #responseContainer > div > .fa-check-square, #responseContainer > div > .fa-window-close {
+    position: relative;
+    z-index: 100;
+}
+
+#responseContainer > div > .fa-check-square, #responseContainer > div > .fa-window-close {
+    cursor: pointer;
+    font-size: 180px;
+}
+
+#gameOverAnswer > div > .fa-check-circle {
+    color: green;
+    display: inline-block;
+    position: relative;
+}
+
+#gameOverAnswer > div > .fa-times-circle {
+    color: red;
+    display: inline-block;
+    position: relative;
+}
+
+.gameOverWhiteBg {
+    background-color: white;
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    z-index: -1;
+}
+
+#gameOverScoreContainer {
+    background-color: #5c657d;
+    width: 280px;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+}
+
+.gameOverScoreTitles {
+    color: #bfbcbc;
+}
+
+.responseWhiteBg {
+    background-color: white;
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    right: 0px;
+    z-index: -1;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Math-o-matic - a time-challenged math game</title>
+    <link rel="stylesheet" type="text/css" href="Content/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="Content/Site.css">
+    <link rel="stylesheet" type="text/css" href="Content/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="Content/jquery-ui.min.css">
+</head>
+
+<body>
+    <div id="app" v-bind:class="bgColor">
+        <div id="introView" v-if="!gameStarted && !gameOver">
+            <div id="introTitle">Math-o-matic</div>
+            <div id="playGameBtn" v-on:click="startGame"><i class="fa fa-play"></i></div>
+        </div>
+        <div id="gameView" v-if="gameStarted">
+            <div id="timerBar">
+                <div></div>
+            </div>
+            <div id="currentScoreCorner" v-cloak>
+                {{ currentScore }}
+            </div>
+            <div id="equationContainer">
+                <div id="expression" v-cloak>
+                    {{ expression }}
+                </div>
+                <div id="answer">
+                    <div v-cloak>= {{ answer }}</div>
+                </div>
+            </div>
+            <div id="responseContainer" v-cloak>
+                <div id="yesResponse" v-on:click="verifyAnswer('yes')"><div class="fa fa-check-square"><div class="responseWhiteBg"></div></div></div>
+                <div id="noResponse" v-on:click="verifyAnswer('no')"><div class="fa fa-window-close"><div class="responseWhiteBg"></div></div></div>
+            </div>
+        </div>
+        <div id="gameOverView" v-if="gameOver">
+            <div id="gameOverEquation">
+                <div id="gameOverExpression" v-cloak>
+                    {{ expression }}
+                </div>
+                <div id="gameOverAnswer">
+                    <div v-cloak>
+                        = {{ answer }} 
+                        <div v-if="answer == correctNum" class="fa fa-check-circle">
+                            <div class="gameOverWhiteBg"></div>
+                        </div>
+                        <div v-else class="fa fa-times-circle">
+                            <div class="gameOverWhiteBg"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div id="gameOverScoreContainer">
+                    <div class="gameOverScoreTitles">Current</div>
+                    <div v-cloak>{{ currentScore }}</div>
+                    <div class="gameOverScoreTitles">Best</div>
+                    <div v-cloak>{{ highScore }}</div>
+                </div>
+                <div id="resetGameBtn" v-on:click="resetGame"><i class="fa fa-repeat"></i></div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="Scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="Scripts/vue.js"></script>
+    <script type="text/javascript" src="Scripts/mathApp.js"></script>
+</body>
+</html>
